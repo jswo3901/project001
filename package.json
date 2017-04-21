@@ -1,0 +1,30 @@
+{
+  "name": "jusang",
+  "version": "1.0.0",
+  "description": "Voting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "git push origin master",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jswo3901/project001.git"
+  },
+  "author": "Jusang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jswo3901/project001/issues"
+  },
+  "homepage": "https://github.com/jswo3901/project001#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "mongodb": "^2.2.15"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.0.0"
+  }
+}
