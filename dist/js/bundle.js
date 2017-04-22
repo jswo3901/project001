@@ -35918,7 +35918,7 @@
 	    return _react2.default.createElement(
 	      'div',
 	      null,
-	      _react2.default.createElement(_AppBar2.default, { title: '\uC124\uBB38\uC870\uC0AC' }),
+	      _react2.default.createElement(_AppBar2.default, { title: '\uC124\uBB38\uC870\uC0AC11144' }),
 	      this.props.children
 	    );
 	  }

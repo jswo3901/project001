@@ -5,7 +5,7 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <AppBar title="설문조사" />
+        <AppBar title="설문조사11144" />
         {this.props.children}
       </div>
     );
