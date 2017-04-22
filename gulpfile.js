@@ -21,7 +21,7 @@ gulp.task('sass', () => gulp.src(files.sass)
   .pipe(gulp.dest ('dist/css'))
 );
 
-gulp.task('webpack',(cb) => {
+gulp.task('webpack',(cb) =>
   gulp.src('src/app-client.js')
   .pipe (webpack ({
     output: {
@@ -37,9 +37,8 @@ gulp.task('webpack',(cb) => {
       }]
     }
   }))
-  .pipe (gulp.dest ('dist/js'));
-  cb();
-});
+  .pipe(gulp.dest('dist/js'))
+);
 
 
 gulp.task('clean', () => del ([ 'babel_cache' ]));
