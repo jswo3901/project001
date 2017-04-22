@@ -6,6 +6,8 @@ const webpack = require('webpack-stream');
 const del = require('del');
 const exec = require('child_process').exec;
 const runSequence = require ('run-sequence');
+//브라우저싱크 클라이언트 자동리로드
+const browserSync = require('browser-sync');
 
 const files = {
 
@@ -54,6 +56,15 @@ gulp.task ('end', (cb) => {
 );
 });
 */
+gulp.task('browser-sync', () => {
+  browserSync.init(null,{
+    proxy: "http://localhost:3000",
+    files: ["dist/**/*.js"],
+    port:7000
+  })
+});
+
+
 gulp.task ('start', (cb) => {
   console.log ('Start server with babel-node. port3000');
   exec('npm run start-server',
@@ -67,6 +78,6 @@ gulp.task ('start', (cb) => {
 
 gulp.task('watch', () => {
   gulp.watch(files.sass, [ 'sass' ]);
-  gulp.watch(files.js, () => runSequence ('webpack', 'start'));
+  gulp.watch(files.js, () => runSequence ('webpack','browser-sync' ,'start'));
   //인자 맨앞에 'end' 일단 뻈음 추후 추가 예정
 });
