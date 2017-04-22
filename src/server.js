@@ -5,12 +5,13 @@ import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
 import routes from './routes';
 import NotFoundPage from './components/NotFoundPage';
+import path from 'path';
 
 const app = new Express ();
 const server = new Server (app);
 
 app.set('view engine', 'ejs');
-app.set('view', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views'));
 
 app.use(Express.static ('dist'));
 
