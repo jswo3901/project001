@@ -15,7 +15,7 @@ export default React.createClass({
 
     return (
       <div>
-         <AppBar title="설문조사112211" showMenuIconButton={false} iconElementRight={
+         <AppBar title="설문조사!!" showMenuIconButton={false} iconElementRight={
           <div className="appbar-btn">
             <Link to="/">
               <FlatButton label="Home" style={buttonStyle} />

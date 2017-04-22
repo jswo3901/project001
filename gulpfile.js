@@ -55,13 +55,14 @@ gulp.task ('end', (cb) => {
 );
 });
 */
-gulp.task('browser-sync', () => {
-  browserSync.init(null,{
-    proxy: "http://localhost:3000",
-    files: ["dist/**/*.js"],
-    port:7000
-  })
-});
+
+//gulp.task('browser-sync', () => {
+//  browserSync.init(null,{
+//    proxy: "http://localhost:3000",
+//    files: ["dist/**/*.js"],
+//    port:7000
+//  })
+//});
 
 
 gulp.task ('start', (cb) => {
@@ -77,6 +78,6 @@ gulp.task ('start', (cb) => {
 
 gulp.task('watch', () => {
   gulp.watch(files.sass, [ 'sass' ]);
-  gulp.watch(files.js, () => runSequence ('webpack','browser-sync' ,'start'));
+  gulp.watch(files.js, () => runSequence ('webpack','start'));
   //인자 맨앞에 'end' 일단 뻈음 추후 추가 예정
 });

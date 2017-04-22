@@ -29,9 +29,9 @@ export default React.createClass ({
           </Tab>
 
           <Tab label="Latest" icon={<FontIcon className="material-icons">format_indent_increase </FontIcon>}>
-            <h3>최근투d표 </h3>
+            <h3>여기서 질문 소팅하겠지?> </h3>
           </Tab>
-          
+
 
         </Tabs>
 
