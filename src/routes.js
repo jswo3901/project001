@@ -6,7 +6,7 @@ import PullPage from './components/PullPage';
 import NotFoundPage from './components/NotFoundPage';
 
 
-const routes = (
+const routes = ( 
   <Route path="/" component={Layout}>
     <IndexRoute component={IndexPage}/>
     <Route path="pull/:name" component={PullPage}/>

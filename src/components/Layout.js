@@ -1,10 +1,11 @@
 import React from 'react';
+import AppBar from 'material-ui/AppBar';
 
 export default React.createClass({
   render() {
     return (
-      <div className="container-fluid">
-        <h1 className="text-center">보팅 App</h1>
+      <div>
+        <AppBar title="설문조사" />
         {this.props.children}
       </div>
     );
