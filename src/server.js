@@ -9,15 +9,16 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import SocketIO from 'socket.io';
 
-injectTapEventPlugin();
 
+import socketHandle from './socket_handle';
 import routes from './routes';
 import NotFoundPage from './components/NotFoundPage';
 
 
 const app = new Express ();
 const server = new Server (app);
-const io = SocketIO (server);
+socketHandle (SocketIO (server));
+injectTapEventPlugin();
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
@@ -61,9 +62,7 @@ app.get('*', (req, res) => {
   );
 });
 
-io.on('connection', (socket) => {
-  console.log("socket Connection")
-});
+
 
 server.listen (process.env.PORT || 3000, err => {
   if ( err ) return console.error (err);
