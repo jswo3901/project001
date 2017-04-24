@@ -1,8 +1,6 @@
 const initState = {
   io: null,
-  trending: [],
-  popular: [],
-  latest: []
+  user: null
 };
 
 const voteReducer = (state, action) => {
