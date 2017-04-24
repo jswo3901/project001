@@ -1,2 +1,6 @@
 Voting 앱
-ffdfd
+
+
+npm run start-server
+
+gulp watch

@@ -2,7 +2,7 @@ import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router';
-
+import io from 'socket.io-client';
 
 
 
@@ -12,6 +12,8 @@ export default React.createClass({
       backgroundColor: 'transparent',
       color:'white'
     };
+
+    console.log(this.props);
 
     return (
       <div>

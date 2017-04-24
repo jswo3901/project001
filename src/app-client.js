@@ -1,23 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { connect, Provider} from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { applyRouterMiddleware, Router, browserHistory } from 'react-router';
 
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
 import voteReducer from './store';
 import routes from './routes';
 
+injectTapEventPlugin ();
 
-injectTapEventPlugin();
-
-let voteStore = createStore(voteReducer);
+let voteStore = createStore (voteReducer);
 
 const AppRouter = React.createClass ({
-  render() {
+  render () {
     const useExtraProps = {
       renderRouteComponent: child => React.cloneElement (child, {
         state: this.props.state,
@@ -30,14 +29,13 @@ const AppRouter = React.createClass ({
         history={browserHistory}
         routes={routes}
         onUpdate={() => window.scrollTo (0, 0)}
-        render={applyRouterMiddleware(useExtraProps)}
-      />
+        render={applyRouterMiddleware (useExtraProps)}
+        />
     );
   }
 });
 
-const RouterConnect = connect ((sate) => ({ state: state }))(AppRouter);
-
+const RouterConnect = connect ((state) => ({ state: state }))(AppRouter);
 
 window.onload = () => {
   ReactDOM.render (
@@ -45,5 +43,5 @@ window.onload = () => {
       <Provider store={voteStore}>
         <RouterConnect />
       </Provider>
-    </MuiThemeProvider>,document.getElementById('container'));
+    </MuiThemeProvider>, document.getElementById ('container'));
 };

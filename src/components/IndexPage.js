@@ -11,7 +11,7 @@ export default React.createClass ({
       <div>
 
         <Paper style={{ padding: '80px', marginBottom: '8px' }}>
-          <h1 className="text-center">Polls </h1>
+          <h1 className="text-center">Polddls </h1>
           <h2 className="text-center">사람들이 만든 poll이 실시간으로 나와야함!!</h2>
           <Link to="/signup">
             <RaisedButton fullWidth={true} primary={true} label="회원가입" />
