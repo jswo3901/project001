@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "git push",
-    "start-server": "nodemon --exec babel-node --presets react,es2015 src/server.js",
+    "start-server": "gulp build && nodemon --exec babel-node --presets react,es2015 src/server.js",
     "stop-server": "$(killall node nodejs)",
     "watch": "gulp watch",
     "dev-start": "gulp build && gulp clean && npm start-server"

@@ -23,13 +23,13 @@ const SignUpSummary = React.createClass ({
         </p>
 
         <Table selectable={false}>
-          <TableHeader>
+          <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
             <TableRow>
               <TableHeaderColumn>아이디</TableHeaderColumn>
               <TableHeaderColumn>비밀번호</TableHeaderColumn>
             </TableRow>
           </TableHeader>
-          <TableBody>
+          <TableBody displayRowCheckbox={false}>
             <TableRow>
               <TableRowColumn>{this.props.name.txt}</TableRowColumn>
               <TableRowColumn>

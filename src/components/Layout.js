@@ -29,7 +29,7 @@ export default React.createClass({
             <Link to="/signup">
               <FlatButton label="회원가입" style={buttonStyle} />
             </Link>
-            <Link to="/signin">
+            <Link to="/login">
               <FlatButton label="로그인" style={buttonStyle} />
             </Link>
           </div>
