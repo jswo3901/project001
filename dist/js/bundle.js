@@ -53433,8 +53433,10 @@
 	    });
 
 	    this.props.state.io.on('signup', function (data) {
-	      if (data.error === null) {
-	        console.log('All Ok user registered!');
+	      if ('server_error' in data) {
+	        console.warn(data.server_error);
+	      } else if (data.error === null) {
+	        console.log('All ok user registered');
 	      } else {
 	        var _this$setState;
 
