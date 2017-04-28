@@ -3,6 +3,46 @@ import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import LinearProgress from 'material-ui/LinearProgress';
+import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+
+
+const SignUpSummary = React.createClass ({
+  getInitialState () {
+    return { show_password: false };
+  },
+  render () {
+    let button = (
+      <RasisedButton primary={true} onClick={() => this.setState ({ show_password: true })}
+        label="비밀번호 보기" />
+    );
+    return (
+      <Paper style={{ padding: '8px' }}>
+        <h1 className="text-center">회원가입 완료!</h1>
+        <p className="text-center">
+          가입하신 아이디로 로그인 하실 수 있습니다.
+        </p>
+
+        <Table selectable={false}>
+          <TableHeader>
+            <TableRow>
+              <TableHeaderColumn>아이디</TableHeaderColumn>
+              <TableHeaderColumn>비밀번호</TableHeaderColumn>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableRowColumn>{this.props.name.txt}</TableRowColumn>
+              <TableRowColumn>
+                {this.state.show_password ? this.props.password.text : button}
+              </TableRowColumn>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </Paper>
+    );
+  }
+});
+
 
 export default React.createClass ({
   getInitialState () {
@@ -12,10 +52,14 @@ export default React.createClass ({
       password: { text: '', valid: false, error: null },
       password_force: 0,
       password_confirm: { text: '', valid: false, error: null },
-      button_disabled: true
+      button_disabled: true,
+      registared: false
     };
   },
   render () {
+    if ( this.state.registered )
+      return <SignUpSummary {...this.state} />
+
     return (
       <Paper style={{ padding: '8px' }}>
         <h1 className="text-center">Sign Up</h1>
@@ -171,7 +215,7 @@ export default React.createClass ({
         console.warn (data.server_error);
       }
       else if ( data.error === null ) {
-        console.log('All ok user registered');
+        this.setState ({ registared: true });
       }
       else {
         this.setState ({
