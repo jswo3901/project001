@@ -1,6 +1,6 @@
 {
   "name": "jusang",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Voting",
   "main": "index.js",
   "scripts": {
